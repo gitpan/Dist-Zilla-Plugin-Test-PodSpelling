@@ -6,7 +6,7 @@
       "Harley Pig <harleypig@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200013, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "Dist::Zilla version 4.300002, CPAN::Meta::Converter version 2.112621",
    "license" : [
       "artistic_2"
    ],
@@ -16,6 +16,9 @@
    },
    "name" : "Dist-Zilla-Plugin-Test-PodSpelling",
    "no_index" : {
+      "directory" : [
+         "corpus"
+      ],
       "file" : [
          "perlcritic.rc"
       ]
@@ -33,15 +36,22 @@
             "Moose" : 0,
             "Pod::Wordlist::hanekomu" : 0,
             "Test::Spelling" : 0,
-            "perl" : "5.008"
+            "perl" : "5.008",
+            "strict" : 0,
+            "warnings" : 0
          }
       },
       "test" : {
          "requires" : {
+            "Cwd" : 0,
+            "Dist::Zilla::Tester" : 0,
             "English" : 0,
             "File::Find" : 0,
             "File::Temp" : 0,
-            "Test::More" : 0
+            "Path::Class" : 0,
+            "Test::More" : "0.88",
+            "Test::Spelling" : 0,
+            "Test::Tester" : 0
          }
       }
    },
@@ -56,6 +66,6 @@
          "web" : "https://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling"
       }
    },
-   "version" : "v2.0.0"
+   "version" : "2.1.0"
 }
 

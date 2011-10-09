@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version v2.0.0
+    version 2.1.0
 
 SYNOPSIS
     In "dist.ini":
@@ -48,6 +48,11 @@ METHODS
     in "dist.ini" are automatically added as stopwords so you don't have to
     add them manually just because they might appear in the "AUTHORS"
     section of the generated POD document.
+
+ACKNOWLEDGEMENTS
+    *   Randy Stauner
+
+        providing initial tests
 
 BUGS
     Please report any bugs or feature requests on the bugtracker website

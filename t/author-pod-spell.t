@@ -26,6 +26,8 @@ __DATA__
 SubmittingPatches
 wordlist
 PodSpelling
+ACKNOWLEDGEMENTS
+Stauner
 Caleb
 Cushing
 Marcel

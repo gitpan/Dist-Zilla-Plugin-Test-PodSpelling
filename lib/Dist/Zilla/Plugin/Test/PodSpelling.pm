@@ -3,7 +3,7 @@ use 5.008;
 use strict;
 use warnings;
 BEGIN {
-	our $VERSION = 'v2.0.0'; # VERSION
+	our $VERSION = '2.1.0'; # VERSION
 }
 
 use Moose;
@@ -96,7 +96,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version v2.0.0
+version 2.1.0
 
 =head1 SYNOPSIS
 
@@ -149,6 +149,16 @@ Normally no stopwords are added by default, but author names appearing in
 C<dist.ini> are automatically added as stopwords so you don't have to add them
 manually just because they might appear in the C<AUTHORS> section of the
 generated POD document.
+
+=head1 ACKNOWLEDGEMENTS
+
+=over
+
+=item * Randy Stauner
+
+providing initial tests
+
+=back
 
 =for Pod::Coverage mvp_multivalue_args
 
@@ -207,6 +217,6 @@ plan skip_all => "Test::Spelling 0.12 required for testing POD spelling"
 
 {{ $set_spell_cmd }}
 {{ $add_stopwords }}
-all_pod_files_spelling_ok('lib');
+all_pod_files_spelling_ok('bin', 'lib');
 {{ $stopwords }}
 
