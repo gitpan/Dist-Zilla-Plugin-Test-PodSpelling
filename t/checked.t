@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 use strict;
 use warnings;
 use Test::Tester;
@@ -8,8 +9,12 @@ use Dist::Zilla::Tester;
 use Path::Class;
 use Cwd ();
 
-plan skip_all => 'No working spellchecker found'
-  unless Test::Spelling::has_working_spellchecker();
+BEGIN {
+	plan skip_all => 'No working spellchecker found'
+		unless has_working_spellchecker;
+}
+
+ok( has_working_spellchecker, 'test has working spellchecker' );
 
 # lib/ and bin/
 spell_check_dist( foo   => [file(qw(bin foo)) => {ok => 0}], file(qw(lib Foo.pm)) );

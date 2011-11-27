@@ -2,9 +2,8 @@ package Dist::Zilla::Plugin::Test::PodSpelling;
 use 5.008;
 use strict;
 use warnings;
-BEGIN {
-	our $VERSION = '2.001001'; # VERSION
-}
+
+our $VERSION = '2.001002'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -31,6 +30,8 @@ has stopwords => (
 	default => sub { [] },                   # default to original
 	handles => {
 		push_stopwords => 'push',
+		uniq_stopwords => 'uniq',
+		no_stopwords   => 'is_empty',
 	}
 );
 
@@ -60,9 +61,9 @@ around add_file => sub {
 		$self->log_debug( 'no copyright_holder found' );
 	}
 
-	if (@{ $self->stopwords } > 0) {
+	unless ( $self->no_stopwords ) {
 		$add_stopwords = 'add_stopwords(<DATA>);';
-		$stopwords = join "\n", '__DATA__', @{ $self->stopwords };
+		$stopwords = join "\n", '__DATA__', $self->uniq_stopwords;
 	}
 	$self->$orig(
 		Dist::Zilla::File::InMemory->new(
@@ -96,7 +97,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.001001
+version 2.001002
 
 =head1 SYNOPSIS
 
@@ -150,7 +151,7 @@ C<dist.ini> are automatically added as stopwords so you don't have to add them
 manually just because they might appear in the C<AUTHORS> section of the
 generated POD document.
 
-=head1 ACKNOWLEDGEMENTS
+=head1 ACKNOWLEDGMENTS
 
 =over
 

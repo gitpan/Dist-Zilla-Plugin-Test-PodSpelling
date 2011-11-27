@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.001001
+    version 2.001002
 
 SYNOPSIS
     In "dist.ini":
@@ -49,7 +49,7 @@ METHODS
     add them manually just because they might appear in the "AUTHORS"
     section of the generated POD document.
 
-ACKNOWLEDGEMENTS
+ACKNOWLEDGMENTS
     *   Randy Stauner
 
         providing initial tests

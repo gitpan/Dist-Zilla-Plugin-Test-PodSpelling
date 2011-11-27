@@ -26,7 +26,6 @@ __DATA__
 SubmittingPatches
 wordlist
 PodSpelling
-ACKNOWLEDGEMENTS
 Stauner
 Caleb
 Cushing
@@ -34,5 +33,3 @@ Marcel
 Gruenauer
 Harley
 Pig
-Caleb
-Cushing
