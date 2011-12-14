@@ -2,6 +2,7 @@
 abstract: 'Author tests for POD spelling'
 author:
   - 'Caleb Cushing <xenoterracide@gmail.com>'
+  - 'Randy Stauner <randy@magnificent-tears.com>'
   - 'Marcel Gruenauer <marcel@cpan.org>'
   - 'Harley Pig <harleypig@gmail.com>'
 build_requires:
@@ -13,7 +14,9 @@ build_requires:
   File::Temp: 0
   Path::Class: 0
   Scalar::Util: 0
+  Test::DZil: 0
   Test::More: 0.94
+  Test::Requires: 0
   Test::Spelling: 0
   Test::Tester: 0
 configure_requires:
@@ -43,4 +46,4 @@ resources:
   bugtracker: https://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling/issues
   homepage: http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-PodSpelling/
   repository: git://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling.git
-version: 2.001003
+version: 2.001004

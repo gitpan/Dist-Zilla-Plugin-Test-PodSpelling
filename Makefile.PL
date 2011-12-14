@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Author tests for POD spelling",
-  "AUTHOR" => "Caleb Cushing <xenoterracide\@gmail.com>, Marcel Gruenauer <marcel\@cpan.org>, Harley Pig <harleypig\@gmail.com>",
+  "AUTHOR" => "Caleb Cushing <xenoterracide\@gmail.com>, Randy Stauner <randy\@magnificent-tears.com>, Marcel Gruenauer <marcel\@cpan.org>, Harley Pig <harleypig\@gmail.com>",
   "BUILD_REQUIRES" => {
     "Carp" => 0,
     "Cwd" => 0,
@@ -20,7 +20,9 @@ my %WriteMakefileArgs = (
     "File::Temp" => 0,
     "Path::Class" => 0,
     "Scalar::Util" => 0,
+    "Test::DZil" => 0,
     "Test::More" => "0.94",
+    "Test::Requires" => 0,
     "Test::Spelling" => 0,
     "Test::Tester" => 0
   },
@@ -40,7 +42,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "2.001003",
+  "VERSION" => "2.001004",
   "test" => {
     "TESTS" => "t/*.t"
   }

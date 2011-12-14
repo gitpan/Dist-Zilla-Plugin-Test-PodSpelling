@@ -3,7 +3,7 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION = '2.001003'; # VERSION
+our $VERSION = '2.001004'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -97,7 +97,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.001003
+version 2.001004
 
 =head1 SYNOPSIS
 
@@ -151,16 +151,6 @@ C<dist.ini> are automatically added as stopwords so you don't have to add them
 manually just because they might appear in the C<AUTHORS> section of the
 generated POD document.
 
-=head1 ACKNOWLEDGMENTS
-
-=over
-
-=item * Randy Stauner
-
-providing initial tests
-
-=back
-
 =for Pod::Coverage mvp_multivalue_args
 
 =head1 BUGS
@@ -179,6 +169,10 @@ feature.
 =item *
 
 Caleb Cushing <xenoterracide@gmail.com>
+
+=item *
+
+Randy Stauner <randy@magnificent-tears.com>
 
 =item *
 
