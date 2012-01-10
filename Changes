@@ -1,5 +1,8 @@
 Revision history for Perl extension Dist-Zilla-Plugin-Test-PodSpelling
 
+2.002000  2012-01-10
+	- Generate stopwords based on the file names in the distribution
+
 2.001004  2011-12-13
 	- Fix tests so that spell check passes ( rwstauner )
 	- Test test contents ( rwstauner )

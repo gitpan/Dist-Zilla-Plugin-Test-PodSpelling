@@ -27,7 +27,7 @@ Dist::Zilla::Plugin::PodSpellingTests - (DEPRECATED) The old name of the PodSpel
 
 =head1 VERSION
 
-version 2.001004
+version 2.002000
 
 =head1 SYNOPSIS
 
