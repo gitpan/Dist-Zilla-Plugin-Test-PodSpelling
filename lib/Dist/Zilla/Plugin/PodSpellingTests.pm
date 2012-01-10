@@ -27,7 +27,7 @@ Dist::Zilla::Plugin::PodSpellingTests - (DEPRECATED) The old name of the PodSpel
 
 =head1 VERSION
 
-version 2.002000
+version 2.002001
 
 =head1 SYNOPSIS
 
@@ -78,7 +78,7 @@ Harley Pig <harleypig@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Caleb Cushing.
+This software is Copyright (c) 2012 by Caleb Cushing.
 
 This is free software, licensed under:
 

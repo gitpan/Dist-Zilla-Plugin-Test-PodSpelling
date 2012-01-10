@@ -26,11 +26,10 @@ all_pod_files_spelling_ok('bin', 'lib');
 __DATA__
 SubmittingPatches
 wordlist
-PodSpelling
-Stauner
 Caleb
 Cushing
 Randy
+Stauner
 Marcel
 Gruenauer
 Harley
@@ -41,3 +40,4 @@ Zilla
 Plugin
 PodSpellingTests
 Test
+PodSpelling
