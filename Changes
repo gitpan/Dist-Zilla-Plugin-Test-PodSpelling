@@ -1,5 +1,9 @@
 Revision history for Perl extension Dist-Zilla-Plugin-Test-PodSpelling
 
+2.002002  2012-03-07
+	- fix issue with a dash in the copyrigh holder GH #5
+	- use Test::Requires over eval
+
 2.002001  2012-01-10
 	- fix copyright year
 

@@ -7,7 +7,7 @@
       "Harley Pig <harleypig@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
+   "generated_by" : "Dist::Zilla version 4.300009, CPAN::Meta::Converter version 2.120630",
    "license" : [
       "artistic_2"
    ],
@@ -32,30 +32,30 @@
       },
       "runtime" : {
          "requires" : {
-            "Dist::Zilla::Plugin::InlineFiles" : 0,
-            "Moose" : 0,
-            "Pod::Wordlist::hanekomu" : 0,
-            "Test::Spelling" : 0,
+            "Dist::Zilla::Plugin::InlineFiles" : "0",
+            "Moose" : "0",
+            "Pod::Wordlist::hanekomu" : "0",
+            "Test::Spelling" : "0",
             "perl" : "5.008",
-            "strict" : 0,
-            "warnings" : 0
+            "strict" : "0",
+            "warnings" : "0"
          }
       },
       "test" : {
          "requires" : {
-            "Carp" : 0,
-            "Cwd" : 0,
-            "Dist::Zilla::Tester" : 0,
-            "English" : 0,
-            "File::Find" : 0,
-            "File::Temp" : 0,
-            "Path::Class" : 0,
-            "Scalar::Util" : 0,
-            "Test::DZil" : 0,
+            "Carp" : "0",
+            "Cwd" : "0",
+            "Dist::Zilla::Tester" : "0",
+            "English" : "0",
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Path::Class" : "0",
+            "Scalar::Util" : "0",
+            "Test::DZil" : "0",
             "Test::More" : "0.94",
-            "Test::Requires" : 0,
-            "Test::Spelling" : 0,
-            "Test::Tester" : 0
+            "Test::Requires" : "0",
+            "Test::Spelling" : "0",
+            "Test::Tester" : "0"
          }
       }
    },
@@ -71,6 +71,6 @@
          "web" : "https://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling"
       }
    },
-   "version" : "2.002001"
+   "version" : "2.002002"
 }
 
