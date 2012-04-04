@@ -21,6 +21,7 @@ t/author-critic.t
 t/author-pod-spell.t
 t/author-test-eol.t
 t/checked.t
+t/dashed.t
 t/file.t
 t/release-cpan-changes.t
 t/release-dist-manifest.t

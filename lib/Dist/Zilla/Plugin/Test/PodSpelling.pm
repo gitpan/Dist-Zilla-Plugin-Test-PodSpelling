@@ -3,7 +3,7 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION = '2.002003'; # VERSION
+our $VERSION = '2.002004'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -56,7 +56,9 @@ around add_file => sub {
 
 	if ( $self->zilla->copyright_holder ) {
 		for ( split( ' ', $self->zilla->copyright_holder ) ) {
-			my ( $word ) = $_ =~ /(\w+)/xms;
+			my ( $word ) = $_ =~ /(\w{2,})/xms;
+
+			next unless $word;
 
 			$self->log_debug( 'copyright_holder word: ' . $word );
 
@@ -118,7 +120,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.002003
+version 2.002004
 
 =head1 SYNOPSIS
 
