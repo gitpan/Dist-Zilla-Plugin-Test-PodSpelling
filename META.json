@@ -7,7 +7,7 @@
       "Harley Pig <harleypig@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300009, CPAN::Meta::Converter version 2.120630",
+   "generated_by" : "Dist::Zilla version 4.300013, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "artistic_2"
    ],
@@ -53,7 +53,7 @@
             "Scalar::Util" : "0",
             "Test::DZil" : "0",
             "Test::More" : "0.94",
-            "Test::Requires" : "0",
+            "Test::Script" : "1.05",
             "Test::Spelling" : "0",
             "Test::Tester" : "0"
          }
@@ -71,6 +71,6 @@
          "web" : "https://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling"
       }
    },
-   "version" : "2.002002"
+   "version" : "2.002003"
 }
 
