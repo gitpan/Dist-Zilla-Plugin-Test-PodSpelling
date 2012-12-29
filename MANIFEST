@@ -10,7 +10,6 @@ corpus/foo/dist.ini
 corpus/foo/lib/Foo.pm
 corpus/nobin/dist.ini
 corpus/nobin/lib/Foo.pm
-docs/SubmittingPatches.pod
 lib/Dist/Zilla/Plugin/PodSpellingTests.pm
 lib/Dist/Zilla/Plugin/Test/PodSpelling.pm
 perlcritic.rc

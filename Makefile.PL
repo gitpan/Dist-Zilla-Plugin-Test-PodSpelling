@@ -35,13 +35,15 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::Plugin::Test::PodSpelling",
   "PREREQ_PM" => {
     "Dist::Zilla::Plugin::InlineFiles" => 0,
+    "Dist::Zilla::Role::FileFinderUser" => 0,
+    "Dist::Zilla::Role::TextTemplate" => 0,
     "Moose" => 0,
     "Pod::Wordlist::hanekomu" => 0,
     "Test::Spelling" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "2.002005",
+  "VERSION" => "2.002006",
   "test" => {
     "TESTS" => "t/*.t"
   }

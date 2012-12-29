@@ -22,7 +22,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300020, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
 license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -35,6 +35,8 @@ no_index:
     - perlcritic.rc
 requires:
   Dist::Zilla::Plugin::InlineFiles: 0
+  Dist::Zilla::Role::FileFinderUser: 0
+  Dist::Zilla::Role::TextTemplate: 0
   Moose: 0
   Pod::Wordlist::hanekomu: 0
   Test::Spelling: 0
@@ -45,4 +47,4 @@ resources:
   bugtracker: https://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling/issues
   homepage: http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-PodSpelling/
   repository: git://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling.git
-version: 2.002005
+version: 2.002006

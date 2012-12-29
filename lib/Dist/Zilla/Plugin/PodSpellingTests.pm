@@ -19,6 +19,7 @@ __PACKAGE__->meta->make_immutable;
 # ABSTRACT: (DEPRECATED) The old name of the PodSpelling plugin
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -27,7 +28,7 @@ Dist::Zilla::Plugin::PodSpellingTests - (DEPRECATED) The old name of the PodSpel
 
 =head1 VERSION
 
-version 2.002005
+version 2.002006
 
 =head1 SYNOPSIS
 
@@ -85,4 +86,3 @@ This is free software, licensed under:
   The Artistic License 2.0 (GPL Compatible)
 
 =cut
-

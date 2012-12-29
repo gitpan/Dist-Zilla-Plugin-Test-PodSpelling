@@ -3,7 +3,7 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION = '2.002005'; # VERSION
+our $VERSION = '2.002006'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -110,8 +110,6 @@ no Moose;
 
 # ABSTRACT: Author tests for POD spelling
 
-
-
 =pod
 
 =head1 NAME
@@ -120,7 +118,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.002005
+version 2.002006
 
 =head1 SYNOPSIS
 
@@ -216,7 +214,6 @@ This is free software, licensed under:
   The Artistic License 2.0 (GPL Compatible)
 
 =cut
-
 
 __DATA__
 ___[ xt/author/pod-spell.t ]___

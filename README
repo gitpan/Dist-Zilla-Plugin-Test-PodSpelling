@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.002005
+    version 2.002006
 
 SYNOPSIS
     In "dist.ini":
