@@ -1,9 +1,9 @@
 package Dist::Zilla::Plugin::Test::PodSpelling;
-use 5.008;
+use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '2.002006'; # VERSION
+our $VERSION = '2.004000'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -14,7 +14,7 @@ with (
 	},
 );
 
-sub mvp_multivalue_args { return qw( stopwords ) }
+sub mvp_multivalue_args { return ( qw( stopwords directories ) ) }
 
 has wordlist => (
 	is      => 'ro',
@@ -40,6 +40,33 @@ has stopwords => (
 	}
 );
 
+has directories => (
+	isa     => 'ArrayRef[Str]',
+	traits  => [ 'Array' ],
+	is      => 'ro',
+	default => sub { [] },                   # default to original
+	handles => {
+		no_directories => 'is_empty',
+		print_directories => [ join => ' ' ],
+	}
+);
+
+sub add_stopword {
+	my ( $self, $data ) = @_;
+
+	$self->log_debug( 'attempting stopwords extraction from: ' . $data );
+	# words must be greater than 2 characters
+	my ( $word ) = $data =~ /(\p{Word}{2,})/xms;
+
+	# log won't like an undef
+	return unless $word;
+
+	$self->log_debug( 'add stopword: ' . $word );
+
+	$self->push_stopwords( $word );
+	return;
+}
+
 around add_file => sub {
 	my ($orig, $self, $file) = @_;
 	my ($set_spell_cmd, $add_stopwords, $stopwords);
@@ -47,36 +74,20 @@ around add_file => sub {
 		$set_spell_cmd = sprintf "set_spell_cmd('%s');", $self->spell_cmd;
 	}
 
-	# automatically add author names to stopwords
-	for (@{ $self->zilla->authors }) {
-		local $_ = $_;    # we don't want to modify $_ in-place
-		s/<.*?>//gxms;
-		push @{ $self->stopwords }, /(\w{2,})/gxms;
-	}
-
-	if ( $self->zilla->copyright_holder ) {
-		for ( split( ' ', $self->zilla->copyright_holder ) ) {
-			my ( $word ) = $_ =~ /(\w{2,})/xms;
-
-			next unless $word;
-
-			$self->log_debug( 'copyright_holder word: ' . $word );
-
-			$self->push_stopwords( $word );
-		}
-	} else {
-		$self->log_debug( 'no copyright_holder found' );
+	foreach my $holder ( split( /\s/xms, join( ' ',
+			@{ $self->zilla->authors },
+			$self->zilla->copyright_holder,
+		))
+	) {
+		$self->add_stopword( $holder );
 	}
 
 	foreach my $file ( @{ $self->found_files } ) {
 		# many of my stopwords are part of a filename
 		$self->log_debug( 'splitting filenames for more words' );
 
-		foreach ( split( '/', $file->name ) ) {
-			my ( $word ) = $_ =~ /(\w+)/xms;
-			$self->log_debug( 'word: ' . $word);
-
-			$self->push_stopwords( $word );
+		foreach my $name ( split( '/', $file->name ) ) {
+			$self->add_stopword( $name );
 		}
 	}
 
@@ -84,6 +95,7 @@ around add_file => sub {
 		$add_stopwords = 'add_stopwords(<DATA>);';
 		$stopwords = join "\n", '__DATA__', $self->uniq_stopwords;
 	}
+
 	$self->$orig(
 		Dist::Zilla::File::InMemory->new(
 			{   name    => $file->name,
@@ -97,6 +109,7 @@ around add_file => sub {
 						set_spell_cmd => \$set_spell_cmd,
 						add_stopwords => \$add_stopwords,
 						stopwords     => \$stopwords,
+						directories   => \$self->print_directories,
 					},
 				),
 			}
@@ -118,7 +131,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.002006
+version 2.004000
 
 =head1 SYNOPSIS
 
@@ -151,6 +164,12 @@ The module name of a word list you wish to use that works with
 L<Test::Spelling>.
 
 Defaults to L<Pod::Wordlist::hanekomu>.
+
+=head2 add_stopword
+
+Called to add stopwords to the stopwords array. It is used to determine if
+automagically detected words are valid and print out debug logging for the
+process.
 
 =head2 spell_cmd
 
@@ -207,7 +226,7 @@ Harley Pig <harleypig@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2012 by Caleb Cushing.
+This software is Copyright (c) 2013 by Caleb Cushing.
 
 This is free software, licensed under:
 
@@ -226,5 +245,5 @@ eval "use Test::Spelling 0.12; use {{ $wordlist }}; 1" or die $@;
 
 {{ $set_spell_cmd }}
 {{ $add_stopwords }}
-all_pod_files_spelling_ok('bin', 'lib');
+all_pod_files_spelling_ok( qw( bin lib {{ $directories }} ) );
 {{ $stopwords }}

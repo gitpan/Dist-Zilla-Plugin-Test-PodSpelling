@@ -15,17 +15,21 @@ eval "use Test::Spelling 0.12; use Pod::Wordlist::hanekomu; 1" or die $@;
 
 
 add_stopwords(<DATA>);
-all_pod_files_spelling_ok('bin', 'lib');
+all_pod_files_spelling_ok( qw( bin lib  ) );
 __DATA__
 wordlist
 Caleb
 Cushing
+xenoterracide
 Randy
 Stauner
+randy
 Marcel
 Gruenauer
+marcel
 Harley
 Pig
+harleypig
 lib
 Dist
 Zilla

@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.002006
+    version 2.004000
 
 SYNOPSIS
     In "dist.ini":
@@ -31,6 +31,11 @@ METHODS
     Test::Spelling.
 
     Defaults to Pod::Wordlist::hanekomu.
+
+  add_stopword
+    Called to add stopwords to the stopwords array. It is used to determine
+    if automagically detected words are valid and print out debug logging
+    for the process.
 
   spell_cmd
     If "spell_cmd" is set then "set_spell_cmd( your_spell_command );" is
@@ -67,7 +72,7 @@ AUTHORS
     *   Harley Pig <harleypig@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is Copyright (c) 2012 by Caleb Cushing.
+    This software is Copyright (c) 2013 by Caleb Cushing.
 
     This is free software, licensed under:
 
