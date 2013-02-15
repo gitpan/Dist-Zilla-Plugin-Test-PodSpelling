@@ -3,7 +3,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '2.004000'; # VERSION
+our $VERSION = '2.004001'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -131,7 +131,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.004000
+version 2.004001
 
 =head1 SYNOPSIS
 
@@ -142,6 +142,7 @@ In C<dist.ini>:
 or:
 
 	[Test::PodSpelling]
+	directories = docs
 	wordlist = Pod::Wordlist
 	spell_cmd = aspell list
 	stopwords = CPAN
@@ -156,7 +157,12 @@ the following file:
 
   xt/author/pod-spell.t - a standard Test::Spelling test
 
-=head1 METHODS
+=head1 ATTRIBUTES
+
+=head2 directories
+
+Additional directories you wish to search for POD spell checking purposes.
+C<bin> and C<lib> are set by default.
 
 =head2 wordlist
 
@@ -164,12 +170,6 @@ The module name of a word list you wish to use that works with
 L<Test::Spelling>.
 
 Defaults to L<Pod::Wordlist::hanekomu>.
-
-=head2 add_stopword
-
-Called to add stopwords to the stopwords array. It is used to determine if
-automagically detected words are valid and print out debug logging for the
-process.
 
 =head2 spell_cmd
 
@@ -190,6 +190,14 @@ Normally no stopwords are added by default, but author names appearing in
 C<dist.ini> are automatically added as stopwords so you don't have to add them
 manually just because they might appear in the C<AUTHORS> section of the
 generated POD document.
+
+=head1 METHODS
+
+=head2 add_stopword
+
+Called to add stopwords to the stopwords array. It is used to determine if
+automagically detected words are valid and print out debug logging for the
+process.
 
 =for Pod::Coverage mvp_multivalue_args
 

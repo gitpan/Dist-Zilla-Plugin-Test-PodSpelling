@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.004000
+    version 2.004001
 
 SYNOPSIS
     In "dist.ini":
@@ -12,6 +12,7 @@ SYNOPSIS
     or:
 
             [Test::PodSpelling]
+            directories = docs
             wordlist = Pod::Wordlist
             spell_cmd = aspell list
             stopwords = CPAN
@@ -25,17 +26,16 @@ DESCRIPTION
 
       xt/author/pod-spell.t - a standard Test::Spelling test
 
-METHODS
+ATTRIBUTES
+  directories
+    Additional directories you wish to search for POD spell checking
+    purposes. "bin" and "lib" are set by default.
+
   wordlist
     The module name of a word list you wish to use that works with
     Test::Spelling.
 
     Defaults to Pod::Wordlist::hanekomu.
-
-  add_stopword
-    Called to add stopwords to the stopwords array. It is used to determine
-    if automagically detected words are valid and print out debug logging
-    for the process.
 
   spell_cmd
     If "spell_cmd" is set then "set_spell_cmd( your_spell_command );" is
@@ -53,6 +53,12 @@ METHODS
     in "dist.ini" are automatically added as stopwords so you don't have to
     add them manually just because they might appear in the "AUTHORS"
     section of the generated POD document.
+
+METHODS
+  add_stopword
+    Called to add stopwords to the stopwords array. It is used to determine
+    if automagically detected words are valid and print out debug logging
+    for the process.
 
 BUGS
     Please report any bugs or feature requests on the bugtracker website
