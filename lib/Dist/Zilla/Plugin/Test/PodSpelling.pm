@@ -3,7 +3,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '2.004001'; # VERSION
+our $VERSION = '2.004002'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -131,7 +131,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.004001
+version 2.004002
 
 =head1 SYNOPSIS
 
@@ -204,7 +204,7 @@ process.
 =head1 BUGS
 
 Please report any bugs or feature requests on the bugtracker website
-https://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling/issues
+https://github.com/xenoterracide/dist-zilla-plugin-test-podspelling/issues
 
 When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired

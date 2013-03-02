@@ -22,8 +22,8 @@ my %WriteMakefileArgs = (
     "Scalar::Util" => 0,
     "Test::DZil" => 0,
     "Test::More" => "0.94",
+    "Test::Requires" => 0,
     "Test::Script" => "1.05",
-    "Test::Spelling" => 0,
     "Test::Tester" => 0
   },
   "CONFIGURE_REQUIRES" => {
@@ -39,11 +39,11 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Role::TextTemplate" => 0,
     "Moose" => 0,
     "Pod::Wordlist::hanekomu" => 0,
-    "Test::Spelling" => 0,
+    "Test::Spelling" => "0.12",
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "2.004001",
+  "VERSION" => "2.004002",
   "test" => {
     "TESTS" => "t/*.t"
   }

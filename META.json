@@ -45,7 +45,7 @@
             "Dist::Zilla::Role::TextTemplate" : "0",
             "Moose" : "0",
             "Pod::Wordlist::hanekomu" : "0",
-            "Test::Spelling" : "0",
+            "Test::Spelling" : "0.12",
             "perl" : "5.010",
             "strict" : "0",
             "warnings" : "0"
@@ -63,24 +63,34 @@
             "Scalar::Util" : "0",
             "Test::DZil" : "0",
             "Test::More" : "0.94",
+            "Test::Requires" : "0",
             "Test::Script" : "1.05",
-            "Test::Spelling" : "0",
             "Test::Tester" : "0"
          }
+      }
+   },
+   "provides" : {
+      "Dist::Zilla::Plugin::PodSpellingTests" : {
+         "file" : "lib/Dist/Zilla/Plugin/PodSpellingTests.pm",
+         "version" : "2.004002"
+      },
+      "Dist::Zilla::Plugin::Test::PodSpelling" : {
+         "file" : "lib/Dist/Zilla/Plugin/Test/PodSpelling.pm",
+         "version" : "2.004002"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling/issues"
+         "web" : "https://github.com/xenoterracide/dist-zilla-plugin-test-podspelling/issues"
       },
-      "homepage" : "http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-PodSpelling/",
+      "homepage" : "https://metacpan.org/dist/Dist-Zilla-Plugin-Test-PodSpelling",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling.git",
-         "web" : "https://github.com/xenoterracide/Dist-Zilla-Plugin-Test-PodSpelling"
+         "url" : "git://github.com/xenoterracide/dist-zilla-plugin-test-podspelling.git",
+         "web" : "https://github.com/xenoterracide/dist-zilla-plugin-test-podspelling"
       }
    },
-   "version" : "2.004001"
+   "version" : "2.004002"
 }
 
