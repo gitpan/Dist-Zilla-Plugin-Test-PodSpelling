@@ -72,11 +72,11 @@
    "provides" : {
       "Dist::Zilla::Plugin::PodSpellingTests" : {
          "file" : "lib/Dist/Zilla/Plugin/PodSpellingTests.pm",
-         "version" : "2.004002"
+         "version" : "1.112140"
       },
       "Dist::Zilla::Plugin::Test::PodSpelling" : {
          "file" : "lib/Dist/Zilla/Plugin/Test/PodSpelling.pm",
-         "version" : "2.004002"
+         "version" : "2.004003"
       }
    },
    "release_status" : "stable",
@@ -91,6 +91,6 @@
          "web" : "https://github.com/xenoterracide/dist-zilla-plugin-test-podspelling"
       }
    },
-   "version" : "2.004002"
+   "version" : "2.004003"
 }
 

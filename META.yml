@@ -36,10 +36,10 @@ no_index:
 provides:
   Dist::Zilla::Plugin::PodSpellingTests:
     file: lib/Dist/Zilla/Plugin/PodSpellingTests.pm
-    version: 2.004002
+    version: 1.112140
   Dist::Zilla::Plugin::Test::PodSpelling:
     file: lib/Dist/Zilla/Plugin/Test/PodSpelling.pm
-    version: 2.004002
+    version: 2.004003
 requires:
   Dist::Zilla::Plugin::InlineFiles: 0
   Dist::Zilla::Role::FileFinderUser: 0
@@ -54,4 +54,4 @@ resources:
   bugtracker: https://github.com/xenoterracide/dist-zilla-plugin-test-podspelling/issues
   homepage: https://metacpan.org/dist/Dist-Zilla-Plugin-Test-PodSpelling
   repository: git://github.com/xenoterracide/dist-zilla-plugin-test-podspelling.git
-version: 2.004002
+version: 2.004003
