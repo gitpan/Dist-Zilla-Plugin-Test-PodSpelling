@@ -28,7 +28,7 @@ Dist::Zilla::Plugin::PodSpellingTests - (DEPRECATED) The old name of the PodSpel
 
 =head1 VERSION
 
-version 2.004003
+version 2.004004
 
 =head1 SYNOPSIS
 
@@ -65,7 +65,7 @@ Caleb Cushing <xenoterracide@gmail.com>
 
 =item *
 
-Randy Stauner <randy@magnificent-tears.com>
+Randy Stauner <rwstauner@cpan.org>
 
 =item *
 

@@ -2,7 +2,7 @@
 abstract: 'Author tests for POD spelling'
 author:
   - 'Caleb Cushing <xenoterracide@gmail.com>'
-  - 'Randy Stauner <randy@magnificent-tears.com>'
+  - 'Randy Stauner <rwstauner@cpan.org>'
   - 'Marcel Gruenauer <marcel@cpan.org>'
   - 'Harley Pig <harleypig@gmail.com>'
 build_requires:
@@ -22,7 +22,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.130880'
 license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -39,7 +39,7 @@ provides:
     version: 1.112140
   Dist::Zilla::Plugin::Test::PodSpelling:
     file: lib/Dist/Zilla/Plugin/Test/PodSpelling.pm
-    version: 2.004003
+    version: 2.004004
 requires:
   Dist::Zilla::Plugin::InlineFiles: 0
   Dist::Zilla::Role::FileFinderUser: 0
@@ -54,4 +54,4 @@ resources:
   bugtracker: https://github.com/xenoterracide/dist-zilla-plugin-test-podspelling/issues
   homepage: https://metacpan.org/dist/Dist-Zilla-Plugin-Test-PodSpelling
   repository: git://github.com/xenoterracide/dist-zilla-plugin-test-podspelling.git
-version: 2.004003
+version: 2.004004

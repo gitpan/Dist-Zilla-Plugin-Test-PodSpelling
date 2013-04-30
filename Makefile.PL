@@ -10,22 +10,8 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Author tests for POD spelling",
-  "AUTHOR" => "Caleb Cushing <xenoterracide\@gmail.com>, Randy Stauner <randy\@magnificent-tears.com>, Marcel Gruenauer <marcel\@cpan.org>, Harley Pig <harleypig\@gmail.com>",
-  "BUILD_REQUIRES" => {
-    "Carp" => 0,
-    "Cwd" => 0,
-    "Dist::Zilla::Tester" => 0,
-    "English" => 0,
-    "File::Find" => 0,
-    "File::Temp" => 0,
-    "Path::Class" => 0,
-    "Scalar::Util" => 0,
-    "Test::DZil" => 0,
-    "Test::More" => "0.94",
-    "Test::Requires" => 0,
-    "Test::Script" => "1.05",
-    "Test::Tester" => 0
-  },
+  "AUTHOR" => "Caleb Cushing <xenoterracide\@gmail.com>, Randy Stauner <rwstauner\@cpan.org>, Marcel Gruenauer <marcel\@cpan.org>, Harley Pig <harleypig\@gmail.com>",
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -43,12 +29,40 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "2.004003",
+  "TEST_REQUIRES" => {
+    "Carp" => 0,
+    "Cwd" => 0,
+    "Dist::Zilla::Tester" => 0,
+    "English" => 0,
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Path::Class" => 0,
+    "Scalar::Util" => 0,
+    "Test::DZil" => 0,
+    "Test::More" => "0.94",
+    "Test::Requires" => 0,
+    "Test::Script" => "1.05",
+    "Test::Tester" => 0
+  },
+  "VERSION" => "2.004004",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};

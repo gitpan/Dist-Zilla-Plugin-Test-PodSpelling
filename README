@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.004003
+    version 2.004004
 
 SYNOPSIS
     In "dist.ini":
@@ -71,7 +71,7 @@ BUGS
 AUTHORS
     *   Caleb Cushing <xenoterracide@gmail.com>
 
-    *   Randy Stauner <randy@magnificent-tears.com>
+    *   Randy Stauner <rwstauner@cpan.org>
 
     *   Marcel Gruenauer <marcel@cpan.org>
 
