@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.004004
+    version 2.006000
 
 SYNOPSIS
     In "dist.ini":
@@ -52,7 +52,8 @@ ATTRIBUTES
     Normally no stopwords are added by default, but author names appearing
     in "dist.ini" are automatically added as stopwords so you don't have to
     add them manually just because they might appear in the "AUTHORS"
-    section of the generated POD document.
+    section of the generated POD document. The same goes for contributors
+    listed under the 'x_contributors' field on your distributions META file.
 
 METHODS
   add_stopword
