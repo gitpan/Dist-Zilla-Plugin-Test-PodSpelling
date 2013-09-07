@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Author tests for POD spelling",
-  "AUTHOR" => "Caleb Cushing <xenoterracide\@gmail.com>, Randy Stauner <rwstauner\@cpan.org>, Marcel Gruenauer <marcel\@cpan.org>, Harley Pig <harleypig\@gmail.com>",
+  "AUTHOR" => "Caleb Cushing <xenoterracide\@gmail.com>, Marcel Gruenauer <hanekomu\@gmail.com>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -24,7 +24,6 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Role::FileFinderUser" => 0,
     "Dist::Zilla::Role::TextTemplate" => 0,
     "Moose" => 0,
-    "Pod::Wordlist::hanekomu" => 0,
     "Test::Spelling" => "0.12",
     "strict" => 0,
     "warnings" => 0
@@ -34,8 +33,8 @@ my %WriteMakefileArgs = (
     "Cwd" => 0,
     "Dist::Zilla::Tester" => 0,
     "English" => 0,
-    "File::Find" => 0,
-    "File::Temp" => 0,
+    "IO::Handle" => 0,
+    "IPC::Open3" => 0,
     "Path::Class" => 0,
     "Scalar::Util" => 0,
     "Test::DZil" => 0,
@@ -44,7 +43,7 @@ my %WriteMakefileArgs = (
     "Test::Script" => "1.05",
     "Test::Tester" => 0
   },
-  "VERSION" => "2.006000",
+  "VERSION" => "2.006001",
   "test" => {
     "TESTS" => "t/*.t"
   }

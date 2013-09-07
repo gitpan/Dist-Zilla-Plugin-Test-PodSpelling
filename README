@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.006000
+    version 2.006001
 
 SYNOPSIS
     In "dist.ini":
@@ -35,7 +35,7 @@ ATTRIBUTES
     The module name of a word list you wish to use that works with
     Test::Spelling.
 
-    Defaults to Pod::Wordlist::hanekomu.
+    Defaults to Pod::Wordlist.
 
   spell_cmd
     If "spell_cmd" is set then "set_spell_cmd( your_spell_command );" is
@@ -69,14 +69,19 @@ BUGS
     When submitting a bug or request, please include a test-file or a patch
     to an existing test-file that illustrates the bug or desired feature.
 
-AUTHORS
-    *   Caleb Cushing <xenoterracide@gmail.com>
+CONTRIBUTORS
+    *   Breno G. de Oliveira <garu@cpan.org>
+
+    *   David Golden <dagolden@cpan.org>
+
+    *   Harley Pig <harleypig@gmail.com>
 
     *   Randy Stauner <rwstauner@cpan.org>
 
-    *   Marcel Gruenauer <marcel@cpan.org>
+AUTHORS
+    *   Caleb Cushing <xenoterracide@gmail.com>
 
-    *   Harley Pig <harleypig@gmail.com>
+    *   Marcel Gruenauer <hanekomu@gmail.com>
 
 COPYRIGHT AND LICENSE
     This software is Copyright (c) 2013 by Caleb Cushing.
