@@ -3,7 +3,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '2.006001'; # VERSION
+our $VERSION = '2.006002'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -126,13 +126,15 @@ no Moose;
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.006001
+version 2.006002
 
 =head1 SYNOPSIS
 
@@ -215,6 +217,10 @@ feature.
 =head1 CONTRIBUTORS
 
 =over 4
+
+=item *
+
+Alexandr Ciornii <alexchorny@gmail.com>
 
 =item *
 

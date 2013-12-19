@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.006001
+    version 2.006002
 
 SYNOPSIS
     In "dist.ini":
@@ -70,6 +70,8 @@ BUGS
     to an existing test-file that illustrates the bug or desired feature.
 
 CONTRIBUTORS
+    *   Alexandr Ciornii <alexchorny@gmail.com>
+
     *   Breno G. de Oliveira <garu@cpan.org>
 
     *   David Golden <dagolden@cpan.org>
