@@ -30,7 +30,7 @@ Dist::Zilla::Plugin::PodSpellingTests - (DEPRECATED) The old name of the PodSpel
 
 =head1 VERSION
 
-version 2.006002
+version 2.006003
 
 =head1 SYNOPSIS
 
@@ -73,7 +73,7 @@ Marcel Gruenauer <hanekomu@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2013 by Caleb Cushing.
+This software is Copyright (c) 2014 by Caleb Cushing.
 
 This is free software, licensed under:
 

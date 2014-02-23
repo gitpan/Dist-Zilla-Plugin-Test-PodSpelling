@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.006002
+    version 2.006003
 
 SYNOPSIS
     In "dist.ini":
@@ -78,6 +78,8 @@ CONTRIBUTORS
 
     *   Harley Pig <harleypig@gmail.com>
 
+    *   Karen Etheridge <ether@cpan.org>
+
     *   Randy Stauner <rwstauner@cpan.org>
 
 AUTHORS
@@ -86,7 +88,7 @@ AUTHORS
     *   Marcel Gruenauer <hanekomu@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is Copyright (c) 2013 by Caleb Cushing.
+    This software is Copyright (c) 2014 by Caleb Cushing.
 
     This is free software, licensed under:
 

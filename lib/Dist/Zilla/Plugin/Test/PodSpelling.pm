@@ -3,11 +3,12 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '2.006002'; # VERSION
+our $VERSION = '2.006003'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
 with (
+	'Dist::Zilla::Role::FileMunger',
 	'Dist::Zilla::Role::TextTemplate',
 	'Dist::Zilla::Role::FileFinderUser' => {
 		default_finders => [ ':InstallModules' ],
@@ -67,8 +68,23 @@ sub add_stopword {
 	return;
 }
 
-around add_file => sub {
-	my ($orig, $self, $file) = @_;
+sub munge_files {
+	my ($self) = @_;
+
+	my $data = $self->merged_section_data;
+	return unless $data and %$data;
+
+	for my $file (@{ $self->zilla->files }) {
+		next unless exists $data->{$file->name};
+
+		$self->munge_file($file);
+	}
+	return;
+}
+
+sub munge_file {
+	my ($self, $file) = @_;
+
 	my ($set_spell_cmd, $add_stopwords, $stopwords);
 	if ($self->spell_cmd) {
 		$set_spell_cmd = sprintf "set_spell_cmd('%s');", $self->spell_cmd;
@@ -97,26 +113,24 @@ around add_file => sub {
 		$stopwords = join "\n", '__DATA__', $self->uniq_stopwords;
 	}
 
-	$self->$orig(
-		Dist::Zilla::File::InMemory->new(
-			{   name    => $file->name,
-				content => $self->fill_in_string(
-					$file->content,
-					{
-						name          => __PACKAGE__,
-						version       => __PACKAGE__->VERSION
-							|| 'bootstrapped version',
-						wordlist      => \$self->wordlist,
-						set_spell_cmd => \$set_spell_cmd,
-						add_stopwords => \$add_stopwords,
-						stopwords     => \$stopwords,
-						directories   => \$self->print_directories,
-					},
-				),
+	$file->content(
+		$self->fill_in_string(
+			$file->content,
+			{
+				name          => __PACKAGE__,
+				version       => __PACKAGE__->VERSION
+					|| 'bootstrapped version',
+				wordlist      => \$self->wordlist,
+				set_spell_cmd => \$set_spell_cmd,
+				add_stopwords => \$add_stopwords,
+				stopwords     => \$stopwords,
+				directories   => \$self->print_directories,
 			}
 		),
 	);
-};
+
+	return;
+}
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
@@ -134,7 +148,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.006002
+version 2.006003
 
 =head1 SYNOPSIS
 
@@ -204,6 +218,8 @@ automagically detected words are valid and print out debug logging for the
 process.
 
 =for Pod::Coverage mvp_multivalue_args
+munge_files
+munge_file
 
 =head1 BUGS
 
@@ -236,6 +252,10 @@ Harley Pig <harleypig@gmail.com>
 
 =item *
 
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
 Randy Stauner <rwstauner@cpan.org>
 
 =back
@@ -256,7 +276,7 @@ Marcel Gruenauer <hanekomu@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2013 by Caleb Cushing.
+This software is Copyright (c) 2014 by Caleb Cushing.
 
 This is free software, licensed under:
 
