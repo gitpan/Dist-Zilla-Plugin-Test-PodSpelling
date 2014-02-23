@@ -64,7 +64,6 @@
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
             "List::Util" : "0",
-            "Path::Class" : "0",
             "Path::Tiny" : "0",
             "Test::DZil" : "0",
             "Test::More" : "0.88",
@@ -82,7 +81,7 @@
       },
       "Dist::Zilla::Plugin::Test::PodSpelling" : {
          "file" : "lib/Dist/Zilla/Plugin/Test/PodSpelling.pm",
-         "version" : "2.006003"
+         "version" : "2.006004"
       }
    },
    "release_status" : "stable",
@@ -97,7 +96,7 @@
          "web" : "https://github.com/xenoterracide/dist-zilla-plugin-test-podspelling"
       }
    },
-   "version" : "2.006003",
+   "version" : "2.006004",
    "x_contributors" : [
       "Alexandr Ciornii <alexchorny@gmail.com>",
       "Breno G. de Oliveira <garu@cpan.org>",

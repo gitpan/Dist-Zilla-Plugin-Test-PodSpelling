@@ -84,7 +84,6 @@ my $static_prereqs = do { my $x = {
                                    'IO::Handle' => '0',
                                    'IPC::Open3' => '0',
                                    'List::Util' => '0',
-                                   'Path::Class' => '0',
                                    'Path::Tiny' => '0',
                                    'Test::DZil' => '0',
                                    'Test::More' => '0.88',
