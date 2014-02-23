@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.006004
+    version 2.006005
 
 SYNOPSIS
     In "dist.ini":
@@ -19,6 +19,10 @@ SYNOPSIS
             stopwords = github
             stopwords = stopwords
             stopwords = wordlist
+
+    If you're using "[ExtraTests]" it must come after "[Test::PodSpelling]",
+    it's worth noting that this ships in the "[@Basic]" bundle so you may
+    have to remove it from that first.
 
 DESCRIPTION
     This is an extension of Dist::Zilla::Plugin::InlineFiles, providing the

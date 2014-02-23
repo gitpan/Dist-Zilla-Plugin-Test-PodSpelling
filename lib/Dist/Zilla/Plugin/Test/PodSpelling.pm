@@ -3,7 +3,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '2.006004'; # VERSION
+our $VERSION = '2.006005'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -148,7 +148,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.006004
+version 2.006005
 
 =head1 SYNOPSIS
 
@@ -166,6 +166,10 @@ or:
 	stopwords = github
 	stopwords = stopwords
 	stopwords = wordlist
+
+If you're using C<[ExtraTests]> it must come after C<[Test::PodSpelling]>,
+it's worth noting that this ships in the C<[@Basic]> bundle so you may have to
+remove it from that first.
 
 =head1 DESCRIPTION
 
