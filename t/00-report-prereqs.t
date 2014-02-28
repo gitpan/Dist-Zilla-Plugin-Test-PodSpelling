@@ -58,6 +58,7 @@ my $static_prereqs = do { my $x = {
                     },
        'runtime' => {
                       'requires' => {
+                                      'Dist::Zilla' => '5',
                                       'Dist::Zilla::Plugin::InlineFiles' => '0',
                                       'Dist::Zilla::Role::FileFinderUser' => '0',
                                       'Dist::Zilla::Role::FileMunger' => '0',
@@ -90,6 +91,7 @@ my $static_prereqs = do { my $x = {
                                    'Test::Requires' => '0',
                                    'Test::Script' => '1.05',
                                    'Test::Tester' => '0',
+                                   'utf8' => '0',
                                    'version' => '0'
                                  }
                  }

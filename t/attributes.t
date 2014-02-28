@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use utf8;
 use Test::More 0.88;
 use Test::DZil;
 use Path::Tiny;
@@ -42,10 +43,10 @@ sub get_content {
 }
 
 my $content = get_content({});
-  like $content, qr/Pod::Wordlist/, q[use default wordlist];
-unlike $content, qr/set_spell_cmd/, q[by default don't set spell command];
-  like $content, qr/add_stopwords/,               q[by default we add stopwords];
-  like $content, qr/__DATA__\s$fname\n$lname/,    q[DATA handle includes author];
+  like $content, qr/Pod::Wordlist/,            q[use default wordlist];
+unlike $content, qr/set_spell_cmd/,            q[by default don't set spell command];
+  like $content, qr/add_stopwords/,            q[by default we add stopwords];
+  like $content, qr/__DATA__\s$fname\n$lname/, q[DATA handle includes author];
 
 $content = get_content({wordlist => 'Foo::Bar'});
 unlike $content, qr/Pod::Wordlist/, q[custom word list];

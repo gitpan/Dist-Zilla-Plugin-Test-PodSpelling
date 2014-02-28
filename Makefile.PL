@@ -21,6 +21,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "artistic_2",
   "NAME" => "Dist::Zilla::Plugin::Test::PodSpelling",
   "PREREQ_PM" => {
+    "Dist::Zilla" => 5,
     "Dist::Zilla::Plugin::InlineFiles" => 0,
     "Dist::Zilla::Role::FileFinderUser" => 0,
     "Dist::Zilla::Role::FileMunger" => 0,
@@ -46,9 +47,10 @@ my %WriteMakefileArgs = (
     "Test::Requires" => 0,
     "Test::Script" => "1.05",
     "Test::Tester" => 0,
+    "utf8" => 0,
     "version" => 0
   },
-  "VERSION" => "2.006005",
+  "VERSION" => "2.006006",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -57,6 +59,7 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Cwd" => 0,
+  "Dist::Zilla" => 5,
   "Dist::Zilla::Plugin::InlineFiles" => 0,
   "Dist::Zilla::Role::FileFinderUser" => 0,
   "Dist::Zilla::Role::FileMunger" => 0,
@@ -78,6 +81,7 @@ my %FallbackPrereqs = (
   "Test::Spelling" => "0.12",
   "Test::Tester" => 0,
   "strict" => 0,
+  "utf8" => 0,
   "version" => 0,
   "warnings" => 0
 );

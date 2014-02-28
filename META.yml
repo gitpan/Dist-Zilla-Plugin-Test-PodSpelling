@@ -19,6 +19,7 @@ build_requires:
   Test::Requires: '0'
   Test::Script: '1.05'
   Test::Tester: '0'
+  utf8: '0'
   version: '0'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
@@ -40,8 +41,9 @@ provides:
     version: '1.112140'
   Dist::Zilla::Plugin::Test::PodSpelling:
     file: lib/Dist/Zilla/Plugin/Test/PodSpelling.pm
-    version: '2.006005'
+    version: '2.006006'
 requires:
+  Dist::Zilla: '5'
   Dist::Zilla::Plugin::InlineFiles: '0'
   Dist::Zilla::Role::FileFinderUser: '0'
   Dist::Zilla::Role::FileMunger: '0'
@@ -55,7 +57,7 @@ resources:
   bugtracker: https://github.com/xenoterracide/dist-zilla-plugin-test-podspelling/issues
   homepage: https://metacpan.org/dist/Dist-Zilla-Plugin-Test-PodSpelling
   repository: git://github.com/xenoterracide/dist-zilla-plugin-test-podspelling.git
-version: '2.006005'
+version: '2.006006'
 x_contributors:
   - 'Alexandr Ciornii <alexchorny@gmail.com>'
   - 'Breno G. de Oliveira <garu@cpan.org>'
