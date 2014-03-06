@@ -52,7 +52,7 @@ my $static_prereqs = do { my $x = {
                       'requires' => {
                                       'Pod::Coverage::TrustPod' => '0',
                                       'Test::CPAN::Changes' => '0.19',
-                                      'Test::CPAN::Meta' => '0',
+                                      'Test::Pod' => '1.41',
                                       'Test::Pod::Coverage' => '1.08'
                                     }
                     },
@@ -82,11 +82,14 @@ my $static_prereqs = do { my $x = {
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
                                    'File::Spec::Functions' => '0',
+                                   'File::pushd' => '0',
                                    'IO::Handle' => '0',
                                    'IPC::Open3' => '0',
                                    'List::Util' => '0',
+                                   'Moose::Util' => '0',
                                    'Path::Tiny' => '0',
                                    'Test::DZil' => '0',
+                                   'Test::Fatal' => '0',
                                    'Test::More' => '0.88',
                                    'Test::Requires' => '0',
                                    'Test::Script' => '1.05',

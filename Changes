@@ -1,5 +1,8 @@
 Revision history for Perl extension Dist-Zilla-Plugin-Test-PodSpelling
 
+2.006007  2014-03-05
+	- munge the file properly even if [ExtraTests] has already moved it
+
 2.006006  2014-02-27
 	- require Dist::Zilla 5
 	  Unicode Changes + 2.6.3 changes means tests only work on dzil 5+

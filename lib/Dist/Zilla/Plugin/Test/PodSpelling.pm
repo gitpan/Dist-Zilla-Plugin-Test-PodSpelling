@@ -3,7 +3,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '2.006006'; # VERSION
+our $VERSION = '2.006007'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -52,6 +52,31 @@ has directories => (
 	}
 );
 
+has _files => (
+	is      => 'rw',
+	isa     => 'ArrayRef[Dist::Zilla::Role::File]',
+);
+
+sub gather_files {
+	my ($self) = @_;
+
+	my $data = $self->merged_section_data;
+	return unless $data and %$data;
+
+	my @files;
+	for my $name (keys %$data) {
+		my $file = Dist::Zilla::File::InMemory->new({
+			name    => $name,
+			content => ${ $data->{$name} },
+		});
+		$self->add_file($file);
+		push @files, $file;
+	}
+
+	$self->_files(\@files);
+	return;
+}
+
 sub add_stopword {
 	my ( $self, $data ) = @_;
 
@@ -71,14 +96,7 @@ sub add_stopword {
 sub munge_files {
 	my ($self) = @_;
 
-	my $data = $self->merged_section_data;
-	return unless $data and %$data;
-
-	for my $file (@{ $self->zilla->files }) {
-		next unless exists $data->{$file->name};
-
-		$self->munge_file($file);
-	}
+	$self->munge_file($_) foreach @{ $self->_files };
 	return;
 }
 
@@ -148,7 +166,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.006006
+version 2.006007
 
 =head1 SYNOPSIS
 
@@ -220,6 +238,8 @@ generated POD document. The same goes for contributors listed under the
 Called to add stopwords to the stopwords array. It is used to determine if
 automagically detected words are valid and print out debug logging for the
 process.
+
+=for Pod::Coverage gather_files
 
 =for Pod::Coverage mvp_multivalue_args
 munge_files
