@@ -53,7 +53,8 @@ my $static_prereqs = do { my $x = {
                                       'Pod::Coverage::TrustPod' => '0',
                                       'Test::CPAN::Changes' => '0.19',
                                       'Test::Pod' => '1.41',
-                                      'Test::Pod::Coverage' => '1.08'
+                                      'Test::Pod::Coverage' => '1.08',
+                                      'Test::Spelling' => '0.12'
                                     }
                     },
        'runtime' => {
@@ -62,6 +63,7 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Plugin::InlineFiles' => '0',
                                       'Dist::Zilla::Role::FileFinderUser' => '0',
                                       'Dist::Zilla::Role::FileMunger' => '0',
+                                      'Dist::Zilla::Role::PrereqSource' => '0',
                                       'Dist::Zilla::Role::TextTemplate' => '0',
                                       'Moose' => '0',
                                       'Test::Spelling' => '0.12',

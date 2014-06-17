@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 VERSION
-    version 2.006007
+    version 2.006008
 
 SYNOPSIS
     In "dist.ini":
@@ -29,6 +29,8 @@ DESCRIPTION
     following file:
 
       xt/author/pod-spell.t - a standard Test::Spelling test
+
+    Test::Spelling will be added as a develop prerequisite.
 
 ATTRIBUTES
   directories
@@ -79,6 +81,8 @@ CONTRIBUTORS
     *   Breno G. de Oliveira <garu@cpan.org>
 
     *   David Golden <dagolden@cpan.org>
+
+    *   Graham Knop <haarg@haarg.org>
 
     *   Harley Pig <harleypig@gmail.com>
 

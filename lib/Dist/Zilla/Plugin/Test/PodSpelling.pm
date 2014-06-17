@@ -3,7 +3,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '2.006007'; # VERSION
+our $VERSION = '2.006008'; # VERSION
 
 use Moose;
 extends 'Dist::Zilla::Plugin::InlineFiles';
@@ -13,6 +13,7 @@ with (
 	'Dist::Zilla::Role::FileFinderUser' => {
 		default_finders => [ ':InstallModules' ],
 	},
+	'Dist::Zilla::Role::PrereqSource',
 );
 
 sub mvp_multivalue_args { return ( qw( stopwords directories ) ) }
@@ -150,6 +151,18 @@ sub munge_file {
 	return;
 }
 
+sub register_prereqs {
+	my $self = shift;
+	$self->zilla->register_prereqs(
+		{
+			type  => 'requires',
+			phase => 'develop',
+		},
+		'Test::Spelling' => '0.12',
+	);
+	return;
+}
+
 __PACKAGE__->meta->make_immutable;
 no Moose;
 1;
@@ -166,7 +179,7 @@ Dist::Zilla::Plugin::Test::PodSpelling - Author tests for POD spelling
 
 =head1 VERSION
 
-version 2.006007
+version 2.006008
 
 =head1 SYNOPSIS
 
@@ -195,6 +208,8 @@ This is an extension of L<Dist::Zilla::Plugin::InlineFiles>, providing
 the following file:
 
   xt/author/pod-spell.t - a standard Test::Spelling test
+
+L<Test::Spelling> will be added as a develop prerequisite.
 
 =head1 ATTRIBUTES
 
@@ -244,6 +259,7 @@ process.
 =for Pod::Coverage mvp_multivalue_args
 munge_files
 munge_file
+register_prereqs
 
 =head1 BUGS
 
@@ -269,6 +285,10 @@ Breno G. de Oliveira <garu@cpan.org>
 =item *
 
 David Golden <dagolden@cpan.org>
+
+=item *
+
+Graham Knop <haarg@haarg.org>
 
 =item *
 
